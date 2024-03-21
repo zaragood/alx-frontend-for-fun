@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 import sys
-import markdown
+import markdown2
 
 
 def markdown_to_html(readme_md, readme_html):
     try:
         with open(readme_md, 'r', encoding='utf-8') as md_file:
-            readme_md = md_file.read()
-        
+            markdown_content = md_file.read()
+            
+        html_content = markdown2.markdown(markdown_content)
+        with open(readme_html, 'w', encoding='utf-8') as html_file:
+            html_file.write(html_content)
     except FileNotFoundError:
         print(f"Missing {readme_md}", file=sys.stderr)
         sys.exit(1)
@@ -22,4 +25,4 @@ if __name__ == "__main__":
     else:
         readme_md = sys.argv[1]
         readme_html = sys.argv[2]
-        markdown_to_html(readme_md, readme_md)
+        markdown_to_html(readme_md, readme_html)
