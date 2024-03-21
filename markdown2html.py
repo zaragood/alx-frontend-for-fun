@@ -7,8 +7,7 @@ def markdown_to_html(readme_md, readme_html):
     try:
         with open(readme_md, 'r', encoding='utf-8') as md_file:
             readme_md = md_file.read()
-        with open(readme_html, 'w', encoding='utf-8') as html_file:
-            html_file.write(readme_md)
+        
     except FileNotFoundError:
         print(f"Missing {readme_md}", file=sys.stderr)
         sys.exit(1)
