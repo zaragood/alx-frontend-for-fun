@@ -7,6 +7,6 @@ Text color #3D3D3D to any elements of class .red that are the first children of 
 body {
     color: #3D3D3D;
     > .red {
-        color: #3D3D3D;
+        color: #FF0000;
     }
 }
