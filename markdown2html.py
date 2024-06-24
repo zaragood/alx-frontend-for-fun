@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+import markdown
 """
     Write a script markdown2html.py that takes an argument 2 strings:
 
@@ -12,8 +14,6 @@
     Missing <filename> and exit 1
     Otherwise, print nothing and exit 0
 """
-import sys
-import markdown
 
 if len(sys.argv) < 3:
     print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
